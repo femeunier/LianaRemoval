@@ -70,11 +70,11 @@ P.vals <- OP.all2plot_sd %>% group_by(time,var) %>% summarise(p.val = t.test2(me
 OP.all2plot_sd <- OP.all2plot_sd %>% left_join(P.vals) %>% ungroup()
 
 
-OP.all2plot_m[OP.all2plot_m$pft == 18 & OP.all2plot_m$treatment == "Removal" & OP.all2plot_m$time == "Initial carbon stocks" & OP.all2plot_m$var == "StructSC","value"] <-
-  (OP.all2plot_m %>% filter(pft == 18,treatment == "Removal",time == "Initial carbon stocks",var == "StructSC") %>% pull(value)  - 0.6)
-
-OP.all2plot_sd[OP.all2plot_sd$pft == 18 & OP.all2plot_sd$treatment == "Removal" & OP.all2plot_sd$time == "Initial carbon stocks" & OP.all2plot_sd$var == "bgb","mean"] <-
-  (OP.all2plot_sd %>% filter(pft == 18,treatment == "Removal",time == "Initial carbon stocks",var == "bgb") %>% pull(mean)  - 0.6)
+# OP.all2plot_m[OP.all2plot_m$pft == 18 & OP.all2plot_m$treatment == "Removal" & OP.all2plot_m$time == "Initial carbon stocks" & OP.all2plot_m$var == "StructSC","value"] <-
+#   (OP.all2plot_m %>% filter(pft == 18,treatment == "Removal",time == "Initial carbon stocks",var == "StructSC") %>% pull(value)  - 0.6)
+#
+# OP.all2plot_sd[OP.all2plot_sd$pft == 18 & OP.all2plot_sd$treatment == "Removal" & OP.all2plot_sd$time == "Initial carbon stocks" & OP.all2plot_sd$var == "bgb","mean"] <-
+#   (OP.all2plot_sd %>% filter(pft == 18,treatment == "Removal",time == "Initial carbon stocks",var == "bgb") %>% pull(mean)  - 0.6)
 
 ggplot() +
   geom_errorbar(data =  subset(OP.all2plot_sd,var == "agb"),

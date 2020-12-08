@@ -48,9 +48,9 @@ data = data.frame(time = c(2014,2014),
                   m = 1.05*c(71.9 + 17.79 + 0.355 + 0.605 + 0.412,
                         79.3 + 0.929 + 1.723 + 2.429)/10)
 
-all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","m"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","m"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
-all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","low"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","low"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
-all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","high"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","high"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
+# all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","m"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","m"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
+# all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","low"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","low"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
+# all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "removal","high"] <- all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" & all_OP_C.agg$treatment == "removal","high"] -seq(0.6,0,length.out = nrow(all_OP_C.agg[all_OP_C.agg$var == "Soil.Carbon" &all_OP_C.agg$treatment == "control","m"]))
 
 
 ggplot(data = all_OP_C.agg %>% arrange(var,treatment,time) %>% filter(!(var == "Total"))) +
